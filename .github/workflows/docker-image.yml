@@ -65,7 +65,7 @@ jobs:
         run: |
           docker stop clair
           docker stop postgres
-          docker commit postgres arminc/clair-db:$(date +%Y-%m-%d)
+          docker commit postgres rgee0/clair-db:$(date +%Y-%m-%d)
           docker tag rgee0/clair-db:$(date +%Y-%m-%d) rgee0/clair-db:latest
           docker tag $CLAIR_LOCAL_SCAN_IMAGE ${CLAIR_LOCAL_SCAN_IMAGE}:${CLAIR_VERSION}_${GITHUB_SHA}
           docker images
